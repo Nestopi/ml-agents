@@ -135,6 +135,8 @@ namespace MLAgents.Policies
             get { return m_BehaviorName + "?team=" + TeamId; }
         }
 
+        public bool useHeuristic => m_BehaviorType == BehaviorType.HeuristicOnly;
+
         internal IPolicy GeneratePolicy(Func<float[]> heuristic)
         {
             switch (m_BehaviorType)

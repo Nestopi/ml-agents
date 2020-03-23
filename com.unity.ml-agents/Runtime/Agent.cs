@@ -139,6 +139,8 @@ namespace MLAgents
         /// Current Agent information (message sent to Brain).
         AgentInfo m_Info;
 
+        public bool IsDone => m_Info.done;
+
         /// Current Agent action (message sent from Brain).
         AgentAction m_Action;
 
@@ -150,6 +152,8 @@ namespace MLAgents
         /// Additionally, the magnitude of the reward should not exceed 1.0
         float m_Reward;
 
+        public float GetReward() { return m_Reward; }
+        
         /// Keeps track of the cumulative reward in this episode.
         float m_CumulativeReward;
 

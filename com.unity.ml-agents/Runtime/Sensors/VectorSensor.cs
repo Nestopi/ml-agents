@@ -14,6 +14,8 @@ namespace MLAgents.Sensors
         int[] m_Shape;
         string m_Name;
 
+        public int ObsCount => m_Observations.Count;
+
         /// <summary>
         /// Initializes the sensor.
         /// </summary>
