@@ -14,7 +14,7 @@ namespace MLAgents
         /// The frequency with which the agent requests a decision. A DecisionPeriod of 5 means
         /// that the Agent will request a decision every 5 Academy steps.
         /// </summary>
-        [Range(1, 20)]
+        [Range(1, 60)]
         [Tooltip("The frequency with which the agent requests a decision. A DecisionPeriod " +
                  "of 5 means that the Agent will request a decision every 5 Academy steps.")]
         public int DecisionPeriod = 5;
