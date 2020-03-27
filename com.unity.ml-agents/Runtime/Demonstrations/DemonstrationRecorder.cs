@@ -84,6 +84,8 @@ namespace MLAgents.Demonstrations
                 demonstrationDirectory = Path.Combine(Application.dataPath, k_DefaultDirectoryName);
             }
 
+            demonstrationName += $"-{System.DateTime.Now.ToString("MMddTHHmm")}";
+
             demonstrationName = SanitizeName(demonstrationName, MaxNameLength);
             var filePath = MakeDemonstrationFilePath(m_FileSystem, demonstrationDirectory, demonstrationName);
             var stream = m_FileSystem.File.Create(filePath);
