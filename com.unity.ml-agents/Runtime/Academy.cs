@@ -208,14 +208,22 @@ namespace MLAgents
                 return;
             }
 
-            m_StepperObject = new GameObject("AcademyFixedUpdateStepper");
 #if true
-            GameObject.DontDestroyOnLoad(m_StepperObject);
+            if (m_StepperObject == default)
+            {
+                m_StepperObject = new GameObject("AcademyFixedUpdateStepper");
+
+                GameObject.DontDestroyOnLoad(m_StepperObject);
+
+                m_FixedUpdateStepper = m_StepperObject.AddComponent<AcademyFixedUpdateStepper>();
+            }
 #else
+            m_StepperObject = new GameObject("AcademyFixedUpdateStepper");
+
             // Don't show this object in the hierarchy
             m_StepperObject.hideFlags = HideFlags.HideInHierarchy;
-#endif
             m_FixedUpdateStepper = m_StepperObject.AddComponent<AcademyFixedUpdateStepper>();
+#endif
         }
 
         /// <summary>
