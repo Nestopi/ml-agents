@@ -387,6 +387,11 @@ namespace MLAgents
             ReloadPolicy();
         }
 
+        /// <summary>
+        /// モデルを取得する
+        /// </summary>
+        public NNModel Model => m_PolicyFactory?.model;
+
         internal void ReloadPolicy()
         {
             if (!m_Initialized)
